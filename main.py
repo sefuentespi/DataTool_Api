@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from DataTool_Api.model.client_model import ClientIn, ClientOut
-from DataTool_Api.db.client_db import Client, get_client, update_client
-from DataTool_Api.model.product_model import ProductIn, ProductOut
-from DataTool_Api.db.product_db import Product, get_product, update_product
+from DataToolApi.model.client_model import ClientIn, ClientOut
+from DataToolApi.db.client_db import Client, get_client, update_client
+from DataToolApi.model.product_model import ProductIn, ProductOut
+from DataToolApi.db.product_db import Product, get_product, update_product
 from fastapi.middleware.cors import CORSMiddleware
 
 DataTool = FastAPI()
