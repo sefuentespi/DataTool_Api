@@ -10,7 +10,7 @@ DataTool = FastAPI()
 
 origins = [
     "http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
-    "http://localhost", "http://localhost:8080",
+    "http://localhost", "http://localhost:8080","https://datatool-front.herokuapp.com/"
 ]
 DataTool.add_middleware(
     CORSMiddleware, allow_origins=origins,
