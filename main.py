@@ -14,6 +14,7 @@ origins = [
     "http://localhost", 
     "http://localhost:8080",
     "http://datatool-front.herokuapp.com"
+    "https://datatool-front.herokuapp.com/"
 ]
 DataTool.add_middleware(
     CORSMiddleware, allow_origins=origins,
