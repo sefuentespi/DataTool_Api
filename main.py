@@ -9,8 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 DataTool = FastAPI()
 
 origins = [
-    "https://datatool-front.herokuapp.com"
-    "https://datatool-back.herokuapp.com/clients/"
+    "*"
 ]
 DataTool.add_middleware(
     CORSMiddleware, allow_origins=origins,
