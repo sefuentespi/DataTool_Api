@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from model.client_model import ClientIn, ClientOut
+from model.client_model import ClientIn, ClientOut, ClientInCreate
 from db.client_db import Client, get_client, update_client
 from model.product_model import ProductIn, ProductOut
 from db.product_db import Product, get_product, update_product
@@ -33,6 +33,19 @@ async def client_update(client: ClientIn):
         client_out = ClientOut(**client_in.dict())
         return client_out
     return None
+
+@DataTool.post("/clients")
+async def client_create(client: ClientInCreate):
+    client_in = get_client(client.id)
+    if client_in == None:
+        client_in.name = client.name
+        client_in.id = client.id
+        client_in.client_isActive = client.client_isActive
+        update_client(client_in)
+        client_out = ClientOut(**client_in.dict())
+        return client_out
+    return None
+
 
 @DataTool.get("/products/{product_id}")
 async def product_get(product_id: int):

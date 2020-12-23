@@ -23,5 +23,5 @@ def get_client(id: int):
         return None
 
 def update_client(client: Client):
-        database_client[client.id] = client
-        return client
+    database_client[client.id] = client
+    return client
