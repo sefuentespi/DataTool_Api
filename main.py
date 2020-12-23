@@ -38,7 +38,7 @@ async def client_update(client: ClientIn):
 async def client_create(client: ClientInCreate):
     client_in = get_client(client.id)
     if client_in == None:
-        client_in = Client(**client_in)
+        client = Client(**client)
         create_client(client)
     return client_in
 
