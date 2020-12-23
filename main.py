@@ -38,9 +38,8 @@ async def client_update(client: ClientIn):
 async def client_create(client: ClientInCreate):
     client_in = get_client(client.id)
     if client_in == None:
-        client = Client(**client)
-        create_client(client)
-    return client_in
+        a = create_client(client)
+    return a
 
 
 @DataTool.get("/products/{product_id}")
