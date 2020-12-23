@@ -39,6 +39,8 @@ async def client_create(client: ClientInCreate):
     client_in = get_client(client.id)
     if client_in == None:
         a = create_client(client)
+    else:
+        a = "Usuario ya existe"
     return a
 
 
