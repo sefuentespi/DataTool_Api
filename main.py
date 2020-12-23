@@ -5,7 +5,6 @@ from db.client_db import Client, get_client, update_client, create_client
 from model.product_model import ProductIn, ProductOut
 from db.product_db import Product, get_product, update_product
 from fastapi.middleware.cors import CORSMiddleware
-from urllib import HTTPException
 
 DataTool = FastAPI()
 
@@ -41,9 +40,6 @@ async def client_create(client: ClientInCreate):
     if client_in == None:
         client_in = Client(**client_in)
         create_client(client)
-    else:   
-        raise HTTPException(status_code=404,
-                            detail = "El usuario ya existe")
     return client_in
 
 
