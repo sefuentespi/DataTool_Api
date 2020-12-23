@@ -25,3 +25,11 @@ def get_client(id: int):
 def update_client(client: Client):
     database_client[client.id] = client
     return client
+
+def create_client(client: Client):
+    if client.id in database_client.keys():
+        return "User already exists"
+    else:
+        new = {client.id: client}
+        database_client.update(new)
+    return "Creation complete"
